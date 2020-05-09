@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+$title-color: #0000ff;
+$btn-color: bisque;
+$body-bg-color: #fefefe;
+$my-padding: 5px 10px;
+$line-color: #e5e5e5;
+$txt-main-color: red;
+
+body {
+  background-color: $body-bg-color;
+}
+input {
+  border: 1px solid $line-color;
+  background-color: #fff;
+  padding: $my-padding;
+}
+button {
+  padding: $my-padding;
+  background-color: $btn-color;
+  border-radius: 2px;
+  margin: 10px;
+}
+#root {
+  padding: 15px;
+  /* background-color: rgb(30, 72, 13); */
+}
+
+#txt {
+  display: none;
+  color: $txt-main-color;
+  padding: $my-padding;
+}
+
+.title {
+  color: $title-color;
+  margin: 10px;
+}
+
+.img {
+  display: inline-block;
+  width: 250px;
+  > img {
+    width: 100%;
+  }
+}
+
+.title-bgimg {
+  $wh: 200px;
+  width: $wh;
+  height: $wh;
+  color: #ff0;
+  background-image: url('./img/webpack.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.box {
+  display: flex;
+  width: 100px;
+  height: 20px;
+  justify-content: space-between;
+  > .dot {
+    $wh: 20px;
+    width: $wh;
+    height: $wh;
+    background-color: red;
+  }
+}
+
+.test {
+  font-size: 30px;
+  color: purple;
+}
+
+.dynamic {
+  font-size: 30px;
+  color: rgb(50, 30, 223);
+}
+
+.audio {
+  margin: 20px 0;
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import './base';
+@import './mixin';
+
+/* 限制最小宽度 */
+@media only screen and (min-width: 750px) {
+  body {
+    width: 750px;
+  }
+}
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+input::-webkit-input-placeholder {
+  color: #d0d0d0;
+}
+textarea::-webkit-input-placeholder {
+  color: #d0d0d0;
+}
+
+.line1 {
+  @include text-ellipsis-m(1);
+}
+.line2 {
+  @include text-ellipsis-m(1);
+}
+.line3 {
+  @include text-ellipsis-m(1);
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!-- 编码 -->
+    <meta charset="UTF-8" />
+    <!-- H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (ios7.0版本以后，safari上已看不到效果) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式 (可选default、black、black-translucent) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略将页面中的数字识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 忽略Android平台中对邮箱地址的识别 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 作者 -->
+    <meta name="author" content="东方头条" />
+    <!-- 关键词 -->
+    <meta name="keywords" content="关键词" />
+    <!-- 描述信息 -->
+    <meta name="description" content="描述信息" />
+    <!-- dns预解析 -->
+    <link rel="dns-prefetch" href="//mini.eastday.com/" />
+    <link rel="dns-prefetch" href="//resources.dftoutiao.com/" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="//mini.eastday.com/toutiaoh5/img/favicon.ico" />
+    <link rel="bookmark" href="//mini.eastday.com/toutiaoh5/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" href="//mini.eastday.com/toutiaoh5/img/favicon.ico" />
+    <title>首页 - MPA</title>
+    <script>
+      !(function(doc, win) {
+        var docEl = doc.documentElement;
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var recalc = function() {
+          var clientWidth = docEl.clientWidth;
+          var MAX_WIDTH = 750; // 设计稿宽度为750px，html设置字体大小100px，设计稿上30px相当于页面上0.3rem；
+          if (!clientWidth) {
+            return;
+          }
+          if (clientWidth >= MAX_WIDTH) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / MAX_WIDTH) + 'px';
+          }
+        };
+        recalc();
+        if (!doc.addEventListener) {
+          return;
+        }
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+    <script src="./js/jshareinstall.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <input type="text" id="J_input" /> <button id="J_square">平方</button> <button id="J_cube">立方</button>
+      <p id="J_result"></p>
+
+      <br />
+      <hr />
+      <br />
+
+      <button id="clickme">点我</button> <span id="txt">能看见我吗？？？</span>
+
+      <br />
+      <hr />
+      <br />
+
+      <p>
+        <video
+          id="J_video"
+          class="video"
+          src="./media/crazy.mp4"
+          data-type="yule"
+          poster="./media/crazy.jpg"
+          type="video/mp4"
+          preload="none"
+          controls="true"
+          webkit-playsinline="true"
+          width="424"
+          height="240"
+        >
+          Your browser does not support the <code>video</code> element.
+        </video>
+      </p>
+      <p class="audio">
+        <audio src="./media/test.mp3" autoplay controls>
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </p>
+
+      <h2 class="title">我下面1张图片</h2>
+      <p class="img"><img src="./img/dog.jpg" alt="" /></p>
+      <h2 class="title title-bgimg">我有1张背景图片</h2>
+
+      <h2 class="title">我下面有1张小图片（会转成base64）</h2>
+      <p class="tiny-img"><img src="./img/dftt.jpg" alt="" /></p>
+
+      <br />
+      <hr />
+      <br />
+
+      <h2 class="title">Flex布局</h2>
+      <div class="box">
+        <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+    </div>
+  </body>
+</html>

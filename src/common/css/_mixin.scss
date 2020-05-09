@@ -1,0 +1,29 @@
+// 单行文本溢出省略显示
+@mixin text-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 多行文本溢出省略显示 (支持 WebKit浏览器或移动端的页面)，默认3行
+@mixin text-ellipsis-m($line: 3) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 100px; // 以100px作为750px宽度的html字号大小。
+  @return $remSize * 1rem;
+}
+
+/**
+ * 字体大小设置
+ * @include font-size(14px) // 1.4rem
+ */
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
